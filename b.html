@@ -6,7 +6,22 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Material Calendar</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<style>
+
+       <!-- Manifest -->
+<link rel="manifest" href="/manifest.json" />
+<!-- Theme Color -->
+<meta name="theme-color" content="#2196f3">
+<!-- Icons (optional for some browsers) -->
+<link rel="apple-touch-icon" href="2.png">
+
+<!-- PWA Script -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("Service Worker Registered"));
+  }
+</script>       
+       <style>
         * {
             margin: 0;
             padding: 0;
