@@ -14,13 +14,6 @@
 <!-- Icons (optional for some browsers) -->
 <link rel="apple-touch-icon" href="2.png">
 
-<!-- PWA Script -->
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-    .then(() => console.log("Service Worker Registered"));
-  }
-</script>       
        <style>
         * {
             margin: 0;
@@ -1035,6 +1028,14 @@ renderAlerts = function() {
         });
     });
 }
+</script>
+<script>
+       if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/service-worker.js')
+                     .then(() => alert('Service Worker registered successfully.'))
+                     .catch(error => alert('Service Worker registration failed:', error));
+       }
+       
 </script>
 </body>
 </html>
