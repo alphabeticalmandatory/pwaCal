@@ -576,6 +576,11 @@
 <span id="notification-msg">New alert added successfully!</span>
 </div>
 <script>
+       if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('blowjob.js')
+                     .then(() => alert('Service Worker registered successfully.'))
+                     .catch(error => alert('Service Worker registration failed:', error));
+       }
         document.addEventListener('DOMContentLoaded', function() {
             // Current date
             const today = new Date();
@@ -1035,11 +1040,7 @@ renderAlerts = function() {
 }
 </script>
 <script>
-       if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('/service-worker.js')
-                     .then(() => alert('Service Worker registered successfully.'))
-                     .catch(error => alert('Service Worker registration failed:', error));
-       }
+       
        
 </script>
 </body>
