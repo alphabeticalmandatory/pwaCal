@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Calendar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2196F3">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <button id="nav-toggle" class="material-icons">menu</button>
+            <h1 id="current-month-year">June 2023</h1>
+            <button id="today-btn" class="material-icons">today</button>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Weekday Indicators -->
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <!-- Calendar Grid -->
+            <div class="calendar-grid" id="calendar-grid">
+                <!-- Dynamically generated calendar days -->
+            </div>
+
+            <!-- Events List -->
+            <div class="events-section">
+                <h2>Upcoming Events</h2>
+                <div class="events-list" id="events-list">
+                    <!-- Dynamically generated events -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Floating Action Button -->
+        <button class="fab" id="add-event-btn">
+            <span class="material-icons">add</span>
+        </button>
+
+        <!-- Navigation Drawer -->
+        <div class="nav-drawer" id="nav-drawer">
+            <div class="drawer-header">
+                <h2>Calendar</h2>
+                <button class="close-drawer material-icons">close</button>
+            </div>
+            <div class="drawer-content">
+                <button class="drawer-item" id="view-month">
+                    <span class="material-icons">calendar_view_month</span>
+                    <span>Month View</span>
+                </button>
+                <button class="drawer-item" id="view-year">
+                    <span class="material-icons">calendar_today</span>
+                    <span>Year View</span>
+                </button>
+                <button class="drawer-item" id="view-upcoming">
+                    <span class="material-icons">notifications</span>
+                    <span>Upcoming Alerts</span>
+                </button>
+                <button class="drawer-item" id="view-settings">
+                    <span class="material-icons">settings</span>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Add Event Modal -->
+        <div class="modal" id="event-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add New Event</h3>
+                    <button class="close-modal material-icons">close</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="event-title">Title</label>
+                        <input type="text" id="event-title" placeholder="Event title">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-date">Date</label>
+                        <input type="date" id="event-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-time">Time (optional)</label>
+                        <input type="time" id="event-time">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-notes">Notes</label>
+                        <textarea id="event-notes" placeholder="Additional notes"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="event-alarm">
+                            Set Reminder
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" id="cancel-event">Cancel</button>
+                    <button class="btn primary" id="save-event">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Year View Modal -->
+        <div class="modal year-view" id="year-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="prev-year material-icons">chevron_left</button>
+                    <h3 id="current-year">2023</h3>
+                    <button class="next-year material-icons">chevron_right</button>
+                    <button class="close-modal material-icons">close</button>
+                </div>
+                <div class="year-grid" id="year-grid">
+                    <!-- Dynamically generated year view -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/alarms.js"></script>
+    <script src="scripts/calendar.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
